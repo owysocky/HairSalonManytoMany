@@ -1,6 +1,6 @@
 using System;
 using MySql.Data.MySqlClient;
-using BestRestaurants;
+using HairSalon;
 
 namespace HairSalon.Models
 {

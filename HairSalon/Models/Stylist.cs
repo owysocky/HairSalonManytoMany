@@ -57,7 +57,7 @@ namespace HairSalon.Models
         stylistId = rdr.GetInt32(0);
         stylistName = rdr.GetString(1);
       }
-      Cuisine newStylist = new Cuisine(stylistName, stylistId);
+      Stylist newStylist = new Stylist(stylistName, stylistId);
       conn.Close();
       if (conn != null)
       {
@@ -94,8 +94,8 @@ namespace HairSalon.Models
         else
         {
           Stylist newStylist = (Stylist) otherStylist;
-          bool idEquality = this.GetId().Equals(newCategory.GetId());
-          bool nameEquality = this.GetName().Equals(newCategory.GetName());
+          bool idEquality = this.GetId().Equals(newStylist.GetId());
+          bool nameEquality = this.GetName().Equals(newStylist.GetName());
           return (idEquality && nameEquality);
         }
     }
