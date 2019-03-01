@@ -65,10 +65,10 @@ namespace HairSalon.Models
       int clientPhone = 0;
       while(rdr.Read())
       {
-        int clientId = rdr.GetInt32(0);
-        int clientStylistId = rdr.GetInt32(1);
-        string clientName = rdr.GetString(2);
-        int clientPhone = rdr.GetInt32(3);
+        clientId = rdr.GetInt32(0);
+        clientStylistId = rdr.GetInt32(1);
+        clientName = rdr.GetString(2);
+        clientPhone = rdr.GetInt32(3);
       }
       Client newClient = new Client(clientStylistId, clientName, clientPhone, clientId);
       conn.Close();
