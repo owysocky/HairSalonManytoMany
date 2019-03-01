@@ -24,6 +24,7 @@ namespace HairSalon.Models
     public int GetPhone(){return _phone;}
 
     public void SetName(string name){_name = name;}
+    public void SetPhone(int phone){_phone = phone;}
 
     public static List<Client> GetAll()
     {
@@ -101,6 +102,51 @@ namespace HairSalon.Models
       cmd.Parameters.Add(phone);
       cmd.ExecuteNonQuery();
       _id = (int) cmd.LastInsertedId;
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public void Delete()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"DELETE FROM clients WHERE id = @searchId;";
+      MySqlParameter searchId = new MySqlParameter();
+      searchId.ParameterName = "@searchId";
+      searchId.Value = _id;
+      cmd.Parameters.Add(searchId);
+      cmd.ExecuteNonQuery();
+      conn.Close();
+      if (conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public void Edit(string newName, int newPhone)
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"UPDATE clients SET name = @newName, phone = @newPhone WHERE id = @searchId;";
+      MySqlParameter searchId = new MySqlParameter();
+      searchId.ParameterName = "@searchId";
+      searchId.Value = _id;
+      cmd.Parameters.Add(searchId);
+      MySqlParameter name = new MySqlParameter();
+      name.ParameterName = "@newName";
+      name.Value = newName;
+      cmd.Parameters.Add(name);
+      MySqlParameter phone = new MySqlParameter();
+      phone.ParameterName = "@newPhone";
+      phone.Value = newPhone;
+      cmd.Parameters.Add(phone);
+      cmd.ExecuteNonQuery();
+      _name = newName;
       conn.Close();
       if (conn != null)
       {
