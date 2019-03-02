@@ -32,6 +32,7 @@ namespace HairSalon.Controllers
       client.Delete();
       return View();
     }
+
     [HttpGet("/stylists/{stylistId}/clients/{clientId}/edit")]
     public ActionResult Edit(int stylistId, int clientId)
     {
