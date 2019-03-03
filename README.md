@@ -10,7 +10,7 @@ _This is a software to keep track of employees and their clients._
 
 ## Known Bugs
 
-_Clients are not removed when stylist was deleted._
+_No known bugs._
 
 ## Installation Requirements
 * _Download and install .NET Core 1.1.4 SDK._
@@ -29,10 +29,10 @@ _Clients are not removed when stylist was deleted._
 * _To run the tests, novigate the folder WordCounter.Tests and use these commands: $ dotnet restore $ dotnet test._
 * _Start MAMAP and enter the fallowing to your terminal:_
 * _/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot_
-* _> CREATE DATABASE to_do;_
-* _> USE to_do;_
-* _> CREATE TABLE categories (id serial PRIMARY KEY, name VARCHAR(255));_
-* _> CREATE TABLE tasks (id serial PRIMARY KEY, description VARCHAR(255));_
+* _> CREATE DATABASE olha_wysocky;_
+* _> USE olha_wysocky;_
+* _> CREATE TABLE stylist (id serial PRIMARY KEY, name VARCHAR(255));_
+* _> CREATE TABLE clients (id serial PRIMARY KEY, stylist_id int, description VARCHAR(255), phone int);_
 
 
 ## Technologies Used
