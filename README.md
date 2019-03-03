@@ -31,7 +31,7 @@ _No known bugs._
 * _/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot_
 * _> CREATE DATABASE olha_wysocky;_
 * _> USE olha_wysocky;_
-* _> CREATE TABLE stylist (id serial PRIMARY KEY, name VARCHAR(255));_
+* _> CREATE TABLE stylists (id serial PRIMARY KEY, name VARCHAR(255));_
 * _> CREATE TABLE clients (id serial PRIMARY KEY, stylist_id int, description VARCHAR(255), phone int);_
 
 
