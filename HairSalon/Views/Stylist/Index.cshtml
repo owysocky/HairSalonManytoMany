@@ -1,5 +1,12 @@
-<h1>Stylists:</h1>
+@{
+  Layout = "_Layout";
+}
 
+<div class="container">
+<div class="jumbotron">
+<h1>Stylists:</h1>
+</div>
+<div class="menu">
 @if (@Model.Count == 0)
 {
   <h3>No stylists have been added yet!</h3>
@@ -11,9 +18,11 @@
 }
 
 <form action='/stylists/new' method='get'>
-<button type="submit">Add a new stylist</button>
+<button type="submit" class="btn btn-warning">Add a new stylist</button>
 </form>
-
+<br>
 <form action='/' method='get'>
-<button type="submit">Back home</button>
+<button type="submit" class="btn btn-info">Back home</button>
 </form>
+</div>
+</div>

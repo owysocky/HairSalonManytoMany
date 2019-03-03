@@ -1,4 +1,12 @@
+@{
+  Layout = "_Layout";
+}
+
+<div class="container">
+<div class="jumbotron">
 <h1>Edit details</h1>
+</div>
+<div class="menu">
 <hr>
 
 <h2>Edit client: @Model["client"].GetName()</h2>
@@ -10,9 +18,11 @@
   <label for="newPhone">Phone:</label>
   <input type="number" name="newPhone" value="@Model["client"].GetPhone()">
 
-  <button type="submit">Edit</button>
+  <button type="submit" class="btn btn-warning">Edit</button>
 </form>
 
 <form action='/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()' method='get'>
-<button type="submit">Return back</button>
+<button type="submit" class="btn btn-info">Return back</button>
 </form>
+</div>
+</div>
