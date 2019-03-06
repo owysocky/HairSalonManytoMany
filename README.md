@@ -12,6 +12,15 @@ _This is a software to keep track of employees and their clients._
 
 _No known bugs._
 
+### Specs
+| Behavior - Plain English | Input | Output |
+| :-------------     | :------------- | :------------- |
+| **"View" buttons redirect user to lists of inputed information** | User input: "View Stylists" | Redirects to View page |
+| **All "Add" buttons redirect users to a form** | User input: "Add a new stylist" | Redirects to Form |
+| **All forms add inputs to database** | User input: "Stylist name" | Added to DB |
+| **All "Delete" buttons remove chosen stylist or client from database** | User input: "Delete" | Deleted from DB |
+| **All "Edit" buttons edit chosen stylist or client in database** | User input: "New stylist name" | Edited in DB |
+
 ## Installation Requirements
 * _Download and install .NET Core 1.1.4 SDK._
 * _Download and install .NET Core Runtime 1.1.2_
