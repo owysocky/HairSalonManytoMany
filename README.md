@@ -20,6 +20,8 @@ _No known bugs._
 | **All forms add inputs to database** | User input: "Stylist name" | Added to DB |
 | **All "Delete" buttons remove chosen stylist or client from database** | User input: "Delete" | Deleted from DB |
 | **All "Edit" buttons edit chosen stylist or client in database** | User input: "New stylist name" | Edited in DB |
+| **All "Select Specialty" buttons add specialties to stylists** | User input: "Add haircut" | Edited in DB |
+| **All "Select Stylists" buttons add stylists to specialties** | User input: "Add Name" | Edited in DB |
 
 ## Installation Requirements
 * _Download and install .NET Core 1.1.4 SDK._
