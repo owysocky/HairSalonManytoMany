@@ -13,7 +13,7 @@ namespace HairSalon.Tests
 
     public ClientControllerTest()
     {
-      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=pavel_zanchuk_test;";
+      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=olha_wysocky_test;";
     }
 
     public void Dispose()
