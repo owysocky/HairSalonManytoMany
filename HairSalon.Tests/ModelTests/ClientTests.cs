@@ -39,11 +39,11 @@ namespace HairSalon.Tests
     public void SetName_SetName_String()
     {
       //Arrange
-      string name = "Name";
+      string name = "Nate";
       Client newClient = new Client(1, name, 1);
 
       //Act
-      string updatedName = "Do the dishes";
+      string updatedName = "Olya";
       newClient.SetName(updatedName);
       string result = newClient.GetName();
 
