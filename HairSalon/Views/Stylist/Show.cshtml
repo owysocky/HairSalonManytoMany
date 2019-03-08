@@ -26,12 +26,20 @@
   </form>
 
   <br>
+  <form action='/stylists/@Model["stylist"].GetId()/edit' method='get'>
+  <button type="submit" class="btn btn-warning">Edit this stylist</button>
+  </form>
+  <br>
   <form action='/stylists/@Model["stylist"].GetId()/clients/new' method='get'>
   <button type="submit" class="btn btn-warning">Add a new client</button>
   </form>
   <br>
   <form action='/stylists/@Model["stylist"].GetId()/delete' method='post'>
   <button type="submit" class="btn btn-danger">Delete this stylist</button>
+  </form>
+  <br>
+  <form action='/stylists/@Model["stylist"].GetId()/clients/delete' method='post'>
+  <button type="submit" class="btn btn-danger">Delete all clients</button>
   </form>
   <br>
   <form action='/stylists' method='get'>
