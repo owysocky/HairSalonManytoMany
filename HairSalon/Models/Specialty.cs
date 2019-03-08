@@ -8,7 +8,7 @@ namespace HairSalon.Models
     private int _id;
     private string _name;
 
-    public Stylist(string name, int id = 0)
+    public Specialty(string name, int id = 0)
     {
       _name = name;
       _id = id;
@@ -45,7 +45,7 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand();
-      cmd.CommandText = @"SELECT * FROM students WHERE id = @id;";
+      cmd.CommandText = @"SELECT * FROM specialties WHERE id = @id;";
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@id";
       searchId.Value = id;
@@ -75,7 +75,7 @@ namespace HairSalon.Models
       cmd.CommandText=@"INSERT INTO specialties (name) VALUES (@name);";
       MySqlParameter specialtyName = new MySqlParameter();
       specialtyName.ParameterName = "@name";
-      specialtyName.Value = Name;
+      specialtyName.Value = _name;
       cmd.Parameters.Add(specialtyName);
       cmd.ExecuteNonQuery();
       conn.Close();
@@ -90,7 +90,7 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM specialties WHERE id = @searchId; DELETE FROM stylists_specialties WHERE specialty_id = @search_id";
+      cmd.CommandText = @"DELETE FROM specialties WHERE id = @searchId; DELETE FROM stylists_specialties WHERE specialty_id = @searchId";
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
       searchId.Value = _id;
@@ -118,7 +118,7 @@ namespace HairSalon.Models
       while(rdr.Read())
       {
         int stylistId = rdr.GetInt32(0);
-        int stylistsName = rdr.GetInt32(1);
+        string stylistsName = rdr.GetString(1);
         Stylist newStylist= new Stylist(stylistsName, stylistId);
         allSpecialtyStylists.Add(newStylist);
       }
@@ -152,17 +152,17 @@ namespace HairSalon.Models
       }
     }
 
-    public override bool Equals(System.Object otherSpetialty)
+    public override bool Equals(System.Object otherSpecialty)
     {
-        if (!(otherSpetialty is Spetialty))
+        if (!(otherSpecialty is Specialty))
         {
           return false;
         }
         else
         {
-          Spetialty newSpetialty = (Spetialty) otherSpetialty;
-          bool idEquality = this.GetId().Equals(newSpetialty.GetId());
-          bool nameEquality = this.GetName().Equals(newSpetialty.GetName());
+          Specialty newSpecialty = (Specialty) otherSpecialty;
+          bool idEquality = this.GetId().Equals(newSpecialty.GetId());
+          bool nameEquality = this.GetName().Equals(newSpecialty.GetName());
           return (idEquality && nameEquality);
         }
     }

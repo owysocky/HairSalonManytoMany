@@ -3,11 +3,18 @@
   background-color: #79C1FF;
 }
 
-.container{
-  background-color: #EBF6FF;
-  width: 60%
-}
-
 .menu{
   margin-left: 10%;
+}
+
+.well{
+  background-color: #EBF6FF;
+  border: 2px solid red;
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
 }

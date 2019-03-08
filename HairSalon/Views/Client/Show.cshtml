@@ -5,25 +5,26 @@
 <div class="container">
 <div class="jumbotron">
 <h1>Details: </h1>
-<div class="menu">
 </div>
+<div class="menu">
+
 <h2>Name: @Model["client"].GetName()</h2>
 <h2>Phone: @Model["client"].GetPhone()</h2>
 
 <form action='/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()/edit' method='get'>
-<button type="submit" "btn btn-warning">Edit this client</button>
+<button type="submit" class="btn btn-warning">Edit this client</button>
 </form>
 <br>
 <form action='/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()/delete' method='post'>
-<button type="submit" "btn btn-danger">Delete this client</button>
+<button type="submit" class="btn btn-danger">Delete this client</button>
 </form>
 <br>
 <form action='/stylists/@Model["stylist"].GetId()/clients/new' method='get'>
-<button type="submit" "btn btn-warning">Add another client</button>
+<button type="submit" class="btn btn-warning">Add another client</button>
 </form>
 <br>
 <form action='/stylists' method='get'>
-<button type="submit" "btn btn-info">View all stylists</button>
+<button type="submit" class="btn btn-info">View all stylists</button>
 </form>
 </div>
 </div>

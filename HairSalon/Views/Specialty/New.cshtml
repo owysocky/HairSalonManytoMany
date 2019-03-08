@@ -12,10 +12,15 @@
 <form action="/specialties" method="post">
   <label for="name">Specialty name:</label>
   <input id="name" name="name" type="text">
-  <button type="submit">Add new specialty</button>
+  <button class="btn btn-warning" type="submit">Add new specialty</button>
 </form>
 
-<p><a href="/">Back home</a></p>
-<p><a href="/specialties">View all specialties</a></p>
+<form action='/specialties/new' method='get'>
+<button type="submit" class="btn btn-warning">Add a new specialty</button>
+</form>
+<br>
+<form action='/specialties' method='get'>
+<button type="submit" class="btn btn-info">View all specialties</button>
+</form>
 </div>
 </div>

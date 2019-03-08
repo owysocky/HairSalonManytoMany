@@ -6,23 +6,31 @@
 <div class="jumbotron">
 <h1>Stylists:</h1>
 </div>
-<div class="menu">
-@if (@Model.Count == 0)
-{
-  <h3>No stylists have been added yet!</h3>
-}
+<div class="row row-eq-height">
+<div class="well col-xs-5">
+  <form action='/stylists/new' method='get'>
+  <button type="submit" class="btn btn-warning">Add a new stylist</button>
+  </form>
+  <br>
+  <form action='/' method='get'>
+  <button type="submit" class="btn btn-info">Back home</button>
+  </form>
+  <br>
+  <form action='/specialties' method='get'>
+  <button type="submit" class="btn btn-info">View all specialties</button>
+  </form>
+</div>
+<div class="well col-xs-6">
+  @if (@Model.Count == 0)
+  {
+    <h3>No stylists have been added yet!</h3>
+  }
 
-@foreach (var stylist in Model)
-{
-  <h3><a href='/stylists/@stylist.GetId()'>@stylist.GetName()</a></h3>
-}
+  @foreach (var stylist in Model)
+  {
+    <h3><a href='/stylists/@stylist.GetId()'>@stylist.GetName()</a></h3>
+  }
+</div>
 
-<form action='/stylists/new' method='get'>
-<button type="submit" class="btn btn-warning">Add a new stylist</button>
-</form>
-<br>
-<form action='/' method='get'>
-<button type="submit" class="btn btn-info">Back home</button>
-</form>
 </div>
 </div>

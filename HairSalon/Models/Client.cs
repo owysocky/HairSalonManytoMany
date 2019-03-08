@@ -23,8 +23,8 @@ namespace HairSalon.Models
     public string GetName(){return _name;}
     public int GetPhone(){return _phone;}
 
-    public void SetName(string name){_name = name;}
-    public void SetPhone(int phone){_phone = phone;}
+    public void SetName(string newName){_name = newName;}
+    public void SetPhone(int newPhone){_phone = newPhone;}
 
     public static List<Client> GetAll()
     {

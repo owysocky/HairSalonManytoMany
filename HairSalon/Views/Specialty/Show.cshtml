@@ -6,11 +6,9 @@
 
 <div class="container">
 <div class="jumbotron">
-<h1>Hair Salon</h1>
+<h2>Specialty: @Model["selectedSpecialty"].GetName()</h2>
 </div>
 <div class="menu">
-<h2>Specialty: @Model["selectedSpecialty"].GetName()</h2>
-<hr />
 
 @if (@Model["specialtyStylists"].Count != 0)
 {
@@ -33,9 +31,17 @@
       <option value='@stylist.GetId()'>@stylist.GetName()</option>
     }
   </select>
-  <button type='submit'>Add</button>
+  <button class="btn btn-warning" type='submit'>Add</button>
 </form>
 
-<p><a href="/">Return to Main Page</a></p>
+<br>
+<form action='/specialties/@Model["selectedSpecialty"].GetId()/delete' method='post'>
+<button type="submit" class="btn btn-danger">Delete this specialty</button>
+</form>
+<br>
+
+<form action='/' method='get'>
+<button type="submit" class="btn btn-info">Home</button>
+</form>
 </div>
 </div>

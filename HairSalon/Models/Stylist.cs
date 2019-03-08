@@ -91,7 +91,7 @@ namespace HairSalon.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM stylists WHERE id = @searchId; DELETE FROM clients WHERE stylist_id = @searchId; DELETE FROM stylists_specialties WHERE stylist_id = @search_id";
+      cmd.CommandText = @"DELETE FROM stylists WHERE id = @searchId; DELETE FROM clients WHERE stylist_id = @searchId; DELETE FROM stylists_specialties WHERE stylist_id = @searchId";
       MySqlParameter searchId = new MySqlParameter();
       searchId.ParameterName = "@searchId";
       searchId.Value = _id;
@@ -153,7 +153,7 @@ namespace HairSalon.Models
         int specialtyId = rdr.GetInt32(0);
         string specialtyName = rdr.GetString(1);
         Specialty newSpecialty = new Specialty(specialtyName, specialtyId);
-        courses.Add(newSpecialty);
+        stylistSpecialties.Add(newSpecialty);
       }
       conn.Close();
       if (conn != null)
@@ -163,7 +163,7 @@ namespace HairSalon.Models
       return stylistSpecialties;
     }
 
-    public void AddSpecialty(int newSpecialty)
+    public void AddSpecialty(Specialty newSpecialty)
     {
       MySqlConnection conn = DB.Connection();
       conn.Open();
