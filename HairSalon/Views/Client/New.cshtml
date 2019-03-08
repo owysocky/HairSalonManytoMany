@@ -4,19 +4,35 @@
 
 <div class="container">
 <div class="jumbotron">
-<h1>Add a new client to @Model.GetName()</h1>
+
+  <h2>Add a new client to @Model.GetName()</h2>
+
 </div>
-<div class="menu">
-<form action='/stylists/@Model.GetId()/clients' method='post'>
-  <input id='stylistId' name='stylistId' type='hidden' value='@Model.GetId()'>
+<div class="row row-eq-height">
+<div class="well col-xs-6">
 
-  <label for='clientName'>Client's name</label>
-  <input id='clientName' name='clientName' type='text' required>
+  <form action='/stylists' method='get'>
+  <button type="submit" class="btn btn-info">View all stylists</button>
+  </form>
   <br>
-  <label for='clientPhone'>Client's phone number</label>
-  <input id='clientPhone' name='clientPhone' type='number' required>
+  <form action='/' method='get'>
+  <button type="submit" class="btn btn-info">Home</button>
+  </form>
 
-  <button type='submit' class="btn btn-warning">Add a client</button>
-</form>
+</div>
+<div class="well col-xs-6">
+
+  <form action='/stylists/@Model.GetId()/clients' method='post'>
+    <input id='stylistId' name='stylistId' type='hidden' value='@Model.GetId()'>
+
+    <label for='clientName'>Client's name</label>
+    <input id='clientName' name='clientName' type='text' required>
+    <br>
+    <label for='clientPhone'>Client's phone number</label>
+    <input id='clientPhone' name='clientPhone' type='number' required>
+
+    <button type='submit' class="btn btn-warning">Add a client</button>
+
+</div>
 </div>
 </div>

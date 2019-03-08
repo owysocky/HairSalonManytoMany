@@ -4,13 +4,30 @@
 
 <div class="container">
 <div class="jumbotron">
-<h1>Details: </h1>
+
+  <h2>Details: </h2>
+
 </div>
-<div class="menu">
+<div class="row row-eq-height">
+<div class="well col-xs-6">
+
+  <form action='/stylists' method='get'>
+  <button type="submit" class="btn btn-info">View all stylists</button>
+  </form>
+  <br>
+  <form action='/' method='get'>
+  <button type="submit" class="btn btn-info">Home</button>
+  </form>
+  <br>
+  <form action='/specialties' method='get'>
+  <button type="submit" class="btn btn-info">View all specialties</button>
+  </form>
+
+</div>
+<div class="well col-xs-6">
+
 <h2>You have deleted the client successfully.<h2/>
 
-<form action='/stylists' method='get'>
-<button type="submit" class="btn btn-info">View all stylists</button>
-</form>
+</div>
 </div>
 </div>

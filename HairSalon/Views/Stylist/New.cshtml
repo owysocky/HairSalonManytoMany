@@ -4,17 +4,30 @@
 
 <div class="container">
 <div class="jumbotron">
-<h1>Add a stylist</h1>
-</div>
-<div class="menu">
-<form action="/stylists" method="post">
-  <label for="stylistName">Stylist Name</label>
-  <input id="stylistName" name="stylistName" type="text">
-  <button type="submit" class="btn btn-warning">Add</button>
-</form>
 
-<form action='/' method='get'>
-<button type="submit" class="btn btn-info">Back home</button>
-</form>
+  <h2>Add a stylist</h2>
+
+</div>
+<div class="row row-eq-height">
+<div class="well col-xs-6">
+
+  <form action='/stylists' method='get'>
+  <button type="submit" class="btn btn-info">View all stylists</button>
+  </form>
+  <br>
+  <form action='/' method='get'>
+  <button type="submit" class="btn btn-info">Home</button>
+  </form>
+
+</div>
+<div class="well col-xs-6">
+
+  <form action="/stylists" method="post">
+    <label for="stylistName">Stylist Name</label>
+    <input id="stylistName" name="stylistName" type="text">
+    <button type="submit" class="btn btn-warning">Add</button>
+  </form>
+
+</div>
 </div>
 </div>

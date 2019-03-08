@@ -4,25 +4,38 @@
 
 <div class="container">
 <div class="jumbotron">
-<h1>Edit details</h1>
+
+  <h2>Edit client: @Model["client"].GetName()</h2>
+
 </div>
-<div class="menu">
-<hr>
+<div class="row row-eq-height">
+<div class="well col-xs-6">
 
-<h2>Edit client: @Model["client"].GetName()</h2>
+  <form action='/stylists' method='get'>
+  <button type="submit" class="btn btn-info">View all stylists</button>
+  </form>
+  <br>
+  <form action='/' method='get'>
+  <button type="submit" class="btn btn-info">Home</button>
+  </form>
+  <br>
+  <form action='/specialties' method='get'>
+  <button type="submit" class="btn btn-info">View all specialties</button>
+  </form>
 
-<form action="/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()" method="post">
-  <label for="newName">Name:</label>
-  <input type="text" name="newName" value="@Model["client"].GetName()">
+</div>
+<div class="well col-xs-6">
 
-  <label for="newPhone">Phone:</label>
-  <input type="number" name="newPhone" value="@Model["client"].GetPhone()">
+  <form action="/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()" method="post">
+    <label for="newName">Name:</label>
+    <input type="text" name="newName" value="@Model["client"].GetName()">
 
-  <button type="submit" class="btn btn-warning">Edit</button>
-</form>
+    <label for="newPhone">Phone:</label>
+    <input type="number" name="newPhone" value="@Model["client"].GetPhone()">
 
-<form action='/stylists/@Model["stylist"].GetId()/clients/@Model["client"].GetId()' method='get'>
-<button type="submit" class="btn btn-info">Return back</button>
-</form>
+    <button type="submit" class="btn btn-warning">Edit</button>
+  </form>
+
+</div>
 </div>
 </div>
